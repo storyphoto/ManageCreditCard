@@ -3,7 +3,7 @@ var router  = express.Router();
 
 // Home
 router.get("/", function(req, res){
-  res.redirect("/cardissuers");
+  res.redirect("/CreditCardIssuerList");
 });
 
 module.exports = router;
