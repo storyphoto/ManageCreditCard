@@ -25,6 +25,7 @@ app.use(methodOverride("_method"));
 app.use("/", require("./routes/home"));
 app.use("/contacts", require("./routes/contacts"));
 app.use("/CreditCardIssuerList", require("./routes/CreditCardIssuerList"));
+app.use("/cardissuers", require("./routes/CreditCardIssuerList"));
 
 
 // Port setting
