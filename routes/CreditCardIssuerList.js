@@ -35,7 +35,7 @@ router.get("/:id/edit", function(req, res){
 router.post("/", function(req, res){
   CreditCardIssuerList.create(req.body, function(err, CreditCardIssuerList){
     if(err) return res.json(err);
-    res.redirect("/cardissuers");
+    res.redirect("/CreditCardIssuerList");
   });
 });
 
@@ -43,7 +43,7 @@ router.post("/", function(req, res){
 router.put("/:id", function(req, res){
   CreditCardIssuerList.findOneAndUpdate({_id:req.params.id}, req.body, function(err, CreditCardIssuerList){
     if(err) return res.json(err);
-    res.redirect("cardissuers/"+req.params.id);
+    res.redirect("/CreditCardIssuerList/"+req.params.id);
   });
 });
 
@@ -51,7 +51,7 @@ router.put("/:id", function(req, res){
 router.delete("/:id", function(req, res){
   CreditCardIssuerList.remove({_id:req.params.id}, function(err){
     if(err) return res.json(err);
-    res.redirect("/cardissuers");
+    res.redirect("/CreditCardIssuerList");
   });
 });
 
