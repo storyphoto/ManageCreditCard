@@ -7,14 +7,26 @@
     <% include ../partials/nav %>
 
     <div class="container contact contact-index">
-      <h2>Index</h2>
+      <h2>Card Issuer List</h2>
+      <tb>
       <ul class="list-group">
-        <% cardissuers.forEach(function(cardissuer) { %>
+        <% CreditCardIssuerList.forEach(function(CreditCardIssuerList) { %>
           <li class="list-group-item">
-            <a href="/cardissuers/<%= cardissuer._id %>"><%= cardissuer.issuer %></a>
+            <tr>
+              <td>
+                    <a href="/CreditCardIssuerList/<%= CreditCardIssuerList._id %>"><%= CreditCardIssuerList.issuer %></a>
+              </td>
+              <td><%= CreditCardIssuerList.amount %>  </td>
+              <td><%= CreditCardIssuerList.cost_period %>  </td>
+              <td><%= CreditCardIssuerList.holding %>  </td>
+              <td><%= CreditCardIssuerList.waiting %>  </td>
+              
+            </tr>
           </li>
         <% }) %>
       </ul>
+    </tb>
+
     </div>
   </body>
 </html>
