@@ -6,20 +6,20 @@ var CreditCardIssuerList  = require("../models/CreditCardIssuerList");
 router.get("/", function(req, res){
   CreditCardIssuerList.find({}, function(err, CreditCardIssuerList){
     if(err) return res.json(err);
-    res.render("cardissuers/index", {CreditCardIssuerList:CreditCardIssuerList});
+    res.render("CreditCardIssuerLists/index", {CreditCardIssuerList:CreditCardIssuerList});
   });
 });
 
 // New
 router.get("/new", function(req, res){
-  res.render("cardissuers/new");
+  res.render("CreditCardIssuerLists/new");
 });
 
 // show
 router.get("/:id", function(req, res){
   CreditCardIssuerList.findOne({_id:req.params.id}, function(err, CreditCardIssuerList){
     if(err) return res.json(err);
-    res.render("cardissuers/show", {CreditCardIssuerList:CreditCardIssuerList});
+    res.render("CreditCardIssuerLists/show", {CreditCardIssuerList:CreditCardIssuerList});
   });
 });
 
@@ -27,7 +27,7 @@ router.get("/:id", function(req, res){
 router.get("/:id/edit", function(req, res){
   CreditCardIssuerList.findOne({_id:req.params.id}, function(err, CreditCardIssuerList){
     if(err) return res.json(err);
-    res.render("cardissuers/edit", {CreditCardIssuerList:CreditCardIssuerList});
+    res.render("CreditCardIssuerLists/edit", {CreditCardIssuerList:CreditCardIssuerList});
   });
 });
 
@@ -35,15 +35,16 @@ router.get("/:id/edit", function(req, res){
 router.post("/", function(req, res){
   CreditCardIssuerList.create(req.body, function(err, CreditCardIssuerList){
     if(err) return res.json(err);
-    res.redirect("/CreditCardIssuerList");
+    res.redirect("/CreditCardIssuerLists");
   });
 });
 
 // update
 router.put("/:id", function(req, res){
+  console.log("fuck");
   CreditCardIssuerList.findOneAndUpdate({_id:req.params.id}, req.body, function(err, CreditCardIssuerList){
     if(err) return res.json(err);
-    res.redirect("/CreditCardIssuerList/"+req.params.id);
+    res.redirect("/CreditCardIssuerList/"+req.params.id);        
   });
 });
 
@@ -51,7 +52,7 @@ router.put("/:id", function(req, res){
 router.delete("/:id", function(req, res){
   CreditCardIssuerList.remove({_id:req.params.id}, function(err){
     if(err) return res.json(err);
-    res.redirect("/CreditCardIssuerList");
+    res.redirect("/CreditCardIssuerLists");
   });
 });
 
