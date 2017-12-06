@@ -8,12 +8,13 @@
 
     <div class="container contact contact-index">
       <h2>Card Issuer List</h2>
-      <table width="615" height="605" border="1">
+      
       <tb>
       <ul class="list-group">
+          
         <% CreditCardIssuerList.forEach(function(CreditCardIssuerList) { %>
           <li class="list-group-item">
-            <tr>
+              <tr> 
               <td>
                     <a href="/CreditCardIssuerList/<%= CreditCardIssuerList._id %>"><%= CreditCardIssuerList.issuer %></a>
               </td>
@@ -27,8 +28,7 @@
         <% }) %>
       </ul>
     </tb>
-  </table>
-
+ 
     </div>
   </body>
 </html>
