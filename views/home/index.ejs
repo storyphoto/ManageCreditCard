@@ -4,19 +4,7 @@
     <% include ../partials/head %>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     
-    <script>
-    $(document).ready(function() {
-      if ($.cookie("access-token") == null)
-      {
-        $("#kakao-login-btn").show();
-      }
-      else
-      {
-        $("#kakao-login-btn").hide();
-      }
     
-    });
-  </script>
   </head>
   <body>
     <% include ../partials/nav %>
@@ -32,7 +20,7 @@
           container: '#kakao-login-btn',
           success: function(authObj) {
             //alert(JSON.stringify(authObj));
-            window.location.href = "/kako_oauth";
+            window.location.href = "/kakao_oauth";
             $.cookie("access-token", authObj.access_token);
           },
           fail: function(err) {
