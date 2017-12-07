@@ -3,3 +3,18 @@ https://cardissue.herokuapp.com
 https://github.com/storyphoto/ManageCreditCard.git
 
 mongodb://jaepyo:1234@ds129146.mlab.com:29146/billing_managements
+
+
+카카오정보
+detectivejjp@gmail.com
+네이티브 앱 키
+5cc9aa09626e103d6b59cdf9becb87a3
+REST API 키
+30e0b78f1a3746f3f1383f4a972d6331
+JavaScript 키
+f1643921732f418af4cbdf08e8f6fde4
+Admin 키
+1a647bfc8f80f7a4951b72fc26a37bb7
+
+웹 로그인 후 redirect 주소
+/kakao_oauth

@@ -1,9 +1,20 @@
 var express = require("express");
 var router  = express.Router();
 
-// Home
+ 
+// Index
 router.get("/", function(req, res){
-  res.redirect("/CreditCardIssuerList");
+
+    res.render("home/index", {});
+ 
 });
 
+
+// kakao_oauth
+router.get("/kakao_oauth", function(req, res){
+  
+      res.redirect("/CreditCardIssuerList");
+   
+  });
+ 
 module.exports = router;
