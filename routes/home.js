@@ -10,8 +10,8 @@ router.get("/", function(req, res){
 });
 
 
-// Index
-router.get("/go_next", function(req, res){
+// kakao_oauth
+router.get("/kakao_oauth", function(req, res){
   
       res.redirect("/CreditCardIssuerList");
    
