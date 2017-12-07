@@ -9,12 +9,12 @@
       if ($.cookie("access-token") == null)
       {
         $("#kakao-login-btn").show();
-        $(".container .contact").hide();
+        $(".container.contact").hide();
       }
       else
       {
         $("#kakao-login-btn").hide();
-        $(".container .contact").show();
+        $(".container.contact").show();
       }
     
     });
