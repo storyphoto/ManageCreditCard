@@ -4,12 +4,25 @@
     <% include ../partials/head %>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     
+    <script>
+    $(document).ready(function() {
+      if ($.cookie("access-token") == null)
+      {
+        $("#kakao-login-btn").show();
+      }
+      else
+      {
+        $("#kakao-login-btn").hide();
+      }
+    
+    });
+  </script>
   </head>
   <body>
     <% include ../partials/nav %>
 
     <a id="kakao-login-btn"></a>
-    <a href="http://developers.kakao.com/logout"></a>
+    <div href="http://developers.kakao.com/logout"></div>
     <script type='text/javascript'>
       //<![CDATA[
         // 사용할 앱의 JavaScript 키를 설정해 주세요.
@@ -18,7 +31,9 @@
         Kakao.Auth.createLoginButton({
           container: '#kakao-login-btn',
           success: function(authObj) {
-            alert(JSON.stringify(authObj));
+            //alert(JSON.stringify(authObj));
+            window.location.href = "/kako_oauth";
+            $.cookie("access-token", authObj.access_token);
           },
           fail: function(err) {
              alert(JSON.stringify(err));
@@ -29,7 +44,7 @@
     
 
    <p></p>
-    <a href="/kakao_oauth">After Login</a>
+    <!-- <a href="/kakao_oauth">After Login</a> -->
 
 
   </body>
