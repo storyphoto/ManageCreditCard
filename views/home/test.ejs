@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+   
+    
+   
+  </head>
+  <body>
+    <% include ../partials/nav %>
+
+  
+    <script>
+        window.onload = function() {
+                var result = '<table border = 1>';
+                for(var i  = 0; i < 10 ; i++){
+                       result += '<tr >';
+                       for(var j = 1; j < 10; j++){
+                               result += '<th>';
+                              
+                               if(i == 0  ){
+                                      result += j + '단';
+                               } else {
+                                      result += j + ' * ' + i + ' = ' + (j * i);
+                               }
+                               result += '</th>'
+                       }
+                       result += '</tr>';
+                }
+                result += '</table>';
+                  document.body.innerHTML =  document.body.innerHTML + result;
+        };
+ </script>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Web Form Example</title>
+</head>
+ 
+<body>
+    <h1>Web Form Example</h1>
+    <form method="post" action="webforms.php">
+        <table border="1" cellpadding="5">
+            <tr>
+                <td>Default</td>
+                <td><input name="name" placeholder="Enter your nickname"
+                    autofocus></td>
+            </tr>
+            <tr>
+                <td>URL</td>
+                <td><input name="url" type="url"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input name="email" type="email"></td>
+            </tr>
+            <tr>
+                <td>Range</td>
+                <td><input name="range" type="range" min="0" max="100" step="5"
+                    value="40"></td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input name="date" type="date"></td>
+            </tr>
+            <tr>
+                <td>Week</td>
+                <td><input name="week" type="week"></td>
+            </tr>
+            <tr>
+                <td>Month</td>
+                <td><input name="month" type="month"></td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td><input name="time" type="time"></td>
+            </tr>
+            <tr>
+                <td>Datetime</td>
+                <td><input name="datetime" type="datetime"></td>
+            </tr>
+            <tr>
+                <td>Local Datetime</td>
+                <td><input name="datetimelocal" type="datetime-local"></td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td><input name="color" type="color"></td>
+            </tr>
+            <tr>
+                <td>Search Query</td>
+                <td><input name="query" type="search"></td>
+            </tr>
+        </table>
+        <br> <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+ 
+
+ 
+
+
+  </body>
+</html>

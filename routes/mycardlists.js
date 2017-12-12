@@ -1,6 +1,7 @@
 var express  = require("express");
 var router   = express.Router();
 var mycardlist  = require("../models/mycardlist");
+var CreditCardIssuerList  = require("../models/CreditCardIssuerList");
 
 
 
@@ -14,11 +15,18 @@ router.get("/", function(req, res){
 });
 
  
-
+// // New
+// router.get("/new", function(req, res){
+//   res.render("./mycardlists/new");
+// });
+ 
 
 // New
 router.get("/new", function(req, res){
-  res.render("./mycardlists/new");
+  CreditCardIssuerList.find({}, function(err, CreditCardIssuerList){
+    if(err) return res.json(err);
+  res.render("./mycardlists/new" , {CreditCardIssuerList:CreditCardIssuerList});
+});
 });
 
 // create

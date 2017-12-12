@@ -1,6 +1,6 @@
 var express = require("express");
 var router  = express.Router();
-var request = require('request');
+// var request = require("request");
  
 // Index
 router.get("/", function(req, res){
@@ -9,6 +9,14 @@ router.get("/", function(req, res){
  
 });
 
+// Index
+
+
+router.get("/test", function(req, res){
+    
+        res.render("home/test", {});
+     
+    });
 
 // kakao_oauth
 router.get("/kakao_oauth", function(req, res){

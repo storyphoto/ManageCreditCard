@@ -14,7 +14,28 @@
       <form class="contact-form" action="/mycardlists" method="post">
           <div class="form-group">
           <label for="issuer">발급사</label>
-          <input class="form-control" type="text" id="issuer" name="issuer" value="">
+          <select class="form-control"  id="issuer" name="issuer" >
+            <% CreditCardIssuerList.forEach(function(CreditCardIssuerList) { %>
+                  <option value = "<%= CreditCardIssuerList.comments %>"  > <%= CreditCardIssuerList.issuer %>  </option>             
+            <% }) %>
+          </select>
+          </div>
+
+          <script type = "text/javascript">
+            $(document).ready(function(){     
+              $('#issuer').change(function(){                   
+                   $('#commentx').val( this.value  );
+              });
+            });
+ 
+
+
+          </script>
+          
+          <div class="form-group">
+              <label for="commentx">카드설명</label>
+              <input class="form-control" type="text" id="commentx" name="commentx"  disabled >
+              <!-- 이게 될리가 없지 , 위에 발급사 골라질때 뭔가 이벤트를 걸어야할듯  -->
           </div>
 
           <div class="form-group">

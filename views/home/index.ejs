@@ -2,71 +2,14 @@
 <html>
   <head>
     <% include ../partials/head %>
-    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+   
     
-    <script>
-    $(document).ready(function(){
-      $("#kakao-rest-login").click(function() {
-        // $.ajax({
-        //   type: "GET",
-        //      dataType: "json",
-        //      crossDomain: true,
-        //      url: "https://kauth.kakao.com/oauth/authorize?client_id=30e0b78f1a3746f3f1383f4a972d6331&redirect_uri=http://localhost:3000/kakao_oauth&response_type=code",
-        //      success: function(data){        
-        //         alert(data);
-        //      }
-        // });
-
-        window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=30e0b78f1a3746f3f1383f4a972d6331&redirect_uri=http://localhost:3000/kakao_oauth&response_type=code";
-      });
-    });
-  </script>
+   
   </head>
   <body>
     <% include ../partials/nav %>
 
-    <a id="kakao-login-btn"></a>
-    <a href="http://developers.kakao.com/logout"></a>
-    <script type='text/javascript'>
-      //<![CDATA[
-        // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('f1643921732f418af4cbdf08e8f6fde4');
-        // 카카오 로그인 버튼을 생성합니다.
-        Kakao.Auth.createLoginButton({
-          container: '#kakao-login-btn',
-          success: function(authObj) {
-            alert(JSON.stringify(authObj));  //개발용
-            console.log(JSON.stringify(authObj));
-            var accessToken = Kakao.Auth.getaccessToken();
-            var refreshToken = Kakao.Auth.getaccessToken();
-
-            if(refreshToken)
-            {
-
-                Kakao.API.request({
-                  url: '/v1/user/me',
-                  success:function(red){
-                    var sData = JSON.stringify(res);
-                    console.log(sData);
-                    alert(sData);
-                    sData = JSON.parse(sData);
-                    var nickname = sData.properties.nickname;
-
-                  }
-                })
-
-            }
-
-          },
-
-          fail: function(err) {
-             alert(JSON.stringify(err));
-          }
-        });
-      //]]>
-    </script>
-    
-    <a href="#" id="kakao-rest-login">카카오 RESTful</a>
+     
 
    <p></p>
    <p></p>
