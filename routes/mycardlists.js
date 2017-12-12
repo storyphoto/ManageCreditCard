@@ -25,7 +25,9 @@ router.get("/", function(req, res){
 router.get("/new", function(req, res){
   CreditCardIssuerList.find({}, function(err, CreditCardIssuerList){
     if(err) return res.json(err);
-  res.render("./mycardlists/new" , {CreditCardIssuerList:CreditCardIssuerList});
+  res.render("./mycardlists/new" , {CreditCardIssuerList:CreditCardIssuerList} 
+  // , {CardList : res.json(CreditCardIssuerList)} 
+);
 });
 });
 

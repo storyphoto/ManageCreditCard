@@ -16,27 +16,34 @@
           <label for="issuer">발급사</label>
           <select class="form-control"  id="issuer" name="issuer" >
             <% CreditCardIssuerList.forEach(function(CreditCardIssuerList) { %>
-                  <option value = "<%= CreditCardIssuerList.comments %>"  > <%= CreditCardIssuerList.issuer %>  </option>             
+                  <option value = "<%= CreditCardIssuerList.issuer %>"  > <%= CreditCardIssuerList.issuer %>  </option>             
             <% }) %>
           </select>
           </div>
 
-          <script type = "text/javascript">
-            $(document).ready(function(){     
-              $('#issuer').change(function(){                   
-                   $('#commentx').val( this.value  );
+            <script type = "text/javascript">
+              $(document).ready(function(){     
+                $('#issuer').change(function(){     
+                    var x = this.value;
+       
+                  $.each(json, function( "issuer" , x){
+                    alert('key:' + key + ' / ' + 'value:' + value);
+                   });
+
+                     $('#commentx').val( x  );  //여기에 CreditCardIssuerList.issuer 골라진 CreditCardIssuerList.comments 를 쏴줘야되는디..
+                });
               });
-            });
- 
 
 
-          </script>
-          
-          <div class="form-group">
-              <label for="commentx">카드설명</label>
-              <input class="form-control" type="text" id="commentx" name="commentx"  disabled >
-              <!-- 이게 될리가 없지 , 위에 발급사 골라질때 뭔가 이벤트를 걸어야할듯  -->
-          </div>
+
+       
+            </script>
+            
+            <div class="form-group">
+                <label for="commentx">카드설명</label>
+                <input class="form-control" type="text" id="commentx" name="commentx"  disabled >
+                <!-- 이게 될리가 없지 , 위에 발급사 골라질때 뭔가 이벤트를 걸어야할듯  -->
+            </div>
 
           <div class="form-group">
           <label for="received_date">받은날</label>
